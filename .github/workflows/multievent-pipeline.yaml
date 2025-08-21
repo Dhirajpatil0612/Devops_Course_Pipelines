@@ -1,0 +1,25 @@
+name: "MultiEvent Pipeline"
+
+on:
+    push:
+        branches:
+            - master
+            - test
+    pull_request: 
+        branches: 
+            - master
+            - test
+
+
+jobs:
+    on-push:
+        runs-on: ubuntu-latest
+        steps:
+        - name: "Running On master/test Push"
+          run: echo "Running On master/test Push"
+
+    on-pull-request:
+        runs-on: ubuntu-latest
+        steps:
+        - name: "Running On Pull request"
+          run: echo "Running On Pull request"
