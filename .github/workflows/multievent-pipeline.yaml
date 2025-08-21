@@ -5,6 +5,7 @@ on:
         branches:
             - master
             - test
+
     pull_request: 
         branches: 
             - master
@@ -14,6 +15,7 @@ on:
             - opened
 
     workflow_dispatch: 
+        
 
 
 jobs:
@@ -32,7 +34,7 @@ jobs:
           run: echo "Running On Pull request"
     
     on-pull-request-closed:
-        if: github.event_name =='pull_request' && github.action =='closed'
+        if: github.event_name =='pull_request' && github.event.action =='closed'
         runs-on: ubuntu-latest
         steps:
         - name: "Running On Pull request"
